@@ -10,7 +10,7 @@ document.querySelector(".hamburger").addEventListener("click", function() {
 
 
 window.addEventListener("scroll", function() {
-    var scroll = window.pageYOffset || document.documentElement.scrollTop;
+    let scroll = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scroll >= 60) {
         document.querySelector(".top").classList.add("top--scrolling");
@@ -21,9 +21,9 @@ window.addEventListener("scroll", function() {
 
 
 
-    const showPopupButton = document.getElementById('showPopup');
-    const popup = document.getElementById('popup');
-    const closePopupButton = document.getElementById('closePopup');
+    let showPopupButton = document.getElementById('showPopup');
+    let popup = document.getElementById('popup');
+    let closePopupButton = document.getElementById('closePopup');
 
     showPopupButton.addEventListener('click', () => {
         popup.style.display = 'block';
@@ -41,8 +41,8 @@ window.addEventListener("scroll", function() {
         }
     });
 
-    const form = document.getElementById('form');
-    const btn = document.getElementById('button');
+    let form = document.getElementById('form');
+    let btn = document.getElementById('button');
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
