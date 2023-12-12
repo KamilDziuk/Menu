@@ -1,0 +1,537 @@
+body {
+    margin: 0;
+  font-family: 'Open Sans', sans-serif;
+background: #1673d6;
+  }
+
+  
+.fluentform .ff-el-group {
+  margin-bottom:3px !important;
+}
+.hamburger {
+position: absolute;
+  margin-top: 30px !important;
+  margin-left:78% !important;
+  padding: 5px 0;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #ffff; }
+
+.hamburger-box {
+  
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  
+  display: block;
+  
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #ffff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+.hamburger--collapse .hamburger-inner {
+  
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+  .hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--collapse.is-active .hamburger-inner {
+  
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; }
+  .hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+
+
+
+.top {
+  position: fixed;
+  top: 0px;
+  background-color: transparent;
+  height:110px;
+  width: 100%;
+  transition: background-color 0s;
+z-index: 997;
+}
+.top:hover {
+backdrop-filter: blur(15px);
+background-color: rgba(0, 0, 0, 0.242);
+}
+
+
+
+.top--scrolling {
+
+backdrop-filter: blur(15px);
+background-color: rgba(0, 0, 0, 0.242);
+  z-index: 997;
+}
+
+.top--open {
+backdrop-filter: blur(15px);
+background-color: rgba(0, 0, 0, 0.242);
+  z-index: 998;
+}
+
+.navbar {
+
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 15px;
+  height: 60px;
+  padding: 0 15px;
+
+z-index: 998;
+}
+
+
+
+.logo {
+position: absolute;
+margin-top:-20px;
+  margin-right: 85%;
+  width: 150px;
+  height: 150px;
+  
+}
+
+.navbar__item {
+  color: #ffff;
+  text-decoration: none;
+  line-height: 30px;
+
+}
+
+.navbar__menu{
+margin-top: 40px;
+
+  background-color: transparent;
+  opacity: 0;
+
+  
+}
+
+.navbar__menu--active {
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  height: 35vh;
+  width: 100vw;
+ background-color:#4A5052;
+z-index: 998;
+}
+.navbar__link {
+margin-right: 20px;
+
+z-index: 998;
+}
+#showPopup {
+position: absolute;
+  margin-top: 2% !important;
+  margin-left:82%;
+ color: #ffff !important;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+outline: none  ;
+padding: 15px 15px 15px ;
+color: rgb(2, 0, 0)  ;
+font-size: 16px  ;
+cursor: pointer ;
+
+
+}
+#showPopup:hover {
+background-color: rgba(253, 253, 253, 0.311);
+}
+
+.popup {
+display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background-color: rgba(0, 0, 0, 0.411);
+  z-index: 999;
+}
+.popup-content {
+top: 17% !important;
+font-size: 12px;
+background-color: rgba(0, 0, 0, 0.242)!important;
+  border: 2px solid #ccc;
+  width:1300px;
+     height:580px !important;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+    z-index: 999;
+     backdrop-filter: blur(15px)!important;
+}
+
+
+
+.ff-default .ff-el-form-control {
+background-color: #d6161600!important;
+  max-width: 60%!important;
+  border: 2px solid #fff !important;
+  color: #fff!important;
+  
+}
+
+.ff-default .ff-el-input--label label {
+  display: inline-block;
+  font-weight: 500;
+  line-height: inherit;
+  margin-bottom: 0;
+  color: #fff!important;
+}
+
+.fluentform .ff-el-form-check {
+    color: #fff!important;
+}
+
+.fluentform .ff-el-form-check-label .ff-el-form-check-input {
+
+  background-color: #d61616!important;
+  border: 2px solid red!important;
+}
+
+
+form.fluent_form_10 .ff-btn-submit:not(.ff_btn_no_style) {
+  background-color: #40a0ff00!important;
+  border: 2px solid #ffffff!important;
+  font-size: 20px;
+}
+
+
+
+#form
+{
+margin-top:40px ;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff!important;
+}
+.field {
+margin-bottom:25px;
+}
+
+.field label {
+display: block;
+font-size: 12px;
+color: #777;
+}
+.field input {
+display: block;
+width:350px ;
+line-height: 1.5 ;
+font-size: 14px;
+border: none ;
+border-bottom: 1px solid #000;
+padding: 2px  ; 
+}
+input[type="submit"] {
+display: block;
+padding: 6px 30px;
+font-size: 14px;
+background-color: #EFEFED;
+color: #000000;
+border: none
+}
+
+.allAvailableApartmentsAvailable,
+.fomrText {
+
+color: #fff!important;
+  font-size: 15px!important;
+  font-weight: 500;
+  margin-left: 67%!important;
+  letter-spacing: normal; 
+  word-spacing: normal;
+}
+
+.checkboxMain
+{
+position: absolute;
+top: 100px;
+font-size: 9px ;
+font-weight: 300  ;
+margin-left: 30px;
+left: 410px;
+margin-right: 10px;
+}
+#button {
+ top: 10px ;
+background-color:#EFEFED;
+color: #000000; 
+border: none;
+padding: 10px 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 12px;
+}
+#button:hover {
+background-color:#EFEFED;
+}
+#error_from_name
+{
+font-size: 12px;
+color: red;
+}
+#error_message
+{
+font-size: 12px;
+color: red;
+}
+
+#error_phone
+{
+font-size: 12px;
+color: red;
+}
+#error_email_id
+{
+font-size: 12px;
+color: red;
+}
+
+@media (max-width:1050px) {
+  .popup-content {
+top: 5% !important;
+font-size: 9px;
+  width:500px;
+     height:610px 
+    
+
+}
+.allAvailableApartmentsAvailable,
+.fomrText {
+
+  font-size: 12px!important;
+}
+
+.navbar {
+font-size: 10.5px;
+
+}
+#showPopup {
+
+position: absolute;
+  margin-top: 3.5% !important;
+  margin-left:82%;
+font-size:7px;
+
+
+}
+.logo{
+margin-right: 80%;
+margin-top:-17px;
+width: 150px;
+  height: 150px;
+}
+
+
+}
+@media (max-width: 600px) {
+.navbar {
+font-size: 10.5px !important;
+}
+#showPopup {
+
+position: absolute;
+margin-top: 6% !important;
+margin-left:5%;
+font-size:12px;
+
+
+}
+
+       input::placeholder {
+
+font-size: 7.5px;
+}
+
+.logo {
+position: absolute;
+margin-top:3.5px;
+  margin-right: 70%;
+  width: 100px;
+  height:100px;
+  
+}
+.top--scrolling {
+height: 15%;
+
+}
+
+
+      }
+      
+      
+      
+          @media (max-width: 550px) {
+              
+              .popup-content {
+
+  width:350px;
+     height:650px !important;
+
+}
+              
+      .ff-default .ff-el-form-control {
+
+  max-width: 60%!important;
+
+
+              
+              
+              
+          }
+          
+                  .ff-default .ff-el-form-control {
+
+  max-width: 100%!important;
+
+          }
+      .allAvailableApartmentsAvailable,
+.fomrText {
+
+
+  font-size: 12px!important;
+
+  margin-left: 45%!important;
+
+}
+  
+          }
+      
+      
+
+  
+      @media (max-width: 450px) {
+
+    .navbar {
+font-size: 5px;
+}
+  
+       input::placeholder {
+
+font-size: 7.5px;
+}
+      }
+      
+      @media (max-width:350px) {
+    .navbar {
+font-size: 5px;
+}
+  
+       input::placeholder {
+
+font-size: 4px;
+}
+
+      }
+      @media (max-width: 250px) {
+    .navbar {
+font-size: 5px;
+}
+      
+       input::placeholder {
+
+font-size: 6px;
+}
+
+      }
+
+
+
+@media (min-width: 600px) {
+  .navbar__menu {
+      opacity: 1;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      top: auto;
+      
+  }
+  .navbar__link {
+      margin-right: 20px;
+  }
+
+  .navbar__link:last-child {
+      margin-right: 0;
+  }
+
+  .navbar__menu--active {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: auto;
+      height: auto;
+      background: transparent;
+  }
+
+  .hamburger {
+      display: none;
+      padding: 5px auto;
+  }
+}
+
+
